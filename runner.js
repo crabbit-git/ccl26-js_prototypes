@@ -21,4 +21,4 @@ mainAccount.addTransaction(buyMilk);
 mainAccount.addTransaction(buyBread);
 // console.log(mainAccount.transactions[0].gbpAmount());
 
-console.log(mainAccount.transactionsByMerchant(tesco));
+console.log(mainAccount.transactionsByTag(groceries));

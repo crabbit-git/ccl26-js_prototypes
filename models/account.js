@@ -13,4 +13,13 @@ Account.prototype.transactionsByMerchant = function(merchant) {
     };
     return transactionsWithMerchant;
 };
+Account.prototype.transactionsByTag = function(tag) {
+    transactionsWithTag = [];
+    for (var transaction of this.transactions) {
+        if (transaction.merchant.tag === tag) {
+            transactionsWithTag.push(transaction)
+        };
+    };
+    return transactionsWithTag;
+};
 module.exports = Account;
