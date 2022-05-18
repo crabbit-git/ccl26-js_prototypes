@@ -17,9 +17,11 @@ const buyBread = new Transaction(
     tesco
 );
 const mainAccount = new Account();
+
 mainAccount.addTransaction(buyMilk);
 mainAccount.addTransaction(buyBread);
+
 // console.log(mainAccount.transactions[0].gbpAmount());
 // console.log(mainAccount.transactionsByTag(groceries));
 // console.log(mainAccount.transactionsByValueRange(2, 10));
-console.log(mainAccount.transactionsThisMonth());
+// console.log(mainAccount.transactionsThisMonth());

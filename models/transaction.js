@@ -14,5 +14,5 @@ Transaction.prototype.gbpAmount = function() {
         'en-GB',
         {currency: 'GBP', style: 'currency'},
     ).format(this.amount);
-}
+};
 module.exports = Transaction;

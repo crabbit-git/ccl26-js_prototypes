@@ -39,5 +39,5 @@ Account.prototype.transactionsThisMonth = function() {
         };
     };
     return transactionsThisMonth;
-}
+};
 module.exports = Account;
