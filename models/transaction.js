@@ -1,6 +1,12 @@
-const Transaction = function(amount, date, merchant) {
+const Transaction = function(
+    amount,
+    year, month, day, hour, minute, second, millisecond = 0,
+    merchant
+) {
     this.amount = amount;
-    this.date = date;
+    this.timestamp = new Date(
+        year, month, day, hour, minute, second, millisecond
+    );
     this.merchant = merchant;
 };
 Transaction.prototype.gbpAmount = function() {

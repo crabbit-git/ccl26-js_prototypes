@@ -8,12 +8,12 @@ const asda = new Merchant('Asda', groceries);
 const tesco = new Merchant('Tesco', groceries);
 const buyMilk = new Transaction(
     2,
-    new Date(2022, 4, 16, 8, 34, 55, 3),
+    2022, 4, 16, 8, 34, 55, 3,
     asda
 );
 const buyBread = new Transaction(
     1.5,
-    new Date(2022, 4, 18, 13, 50, 3, 55),
+    2022, 5, 18, 13, 50, 3, 55,
     tesco
 );
 const mainAccount = new Account();
@@ -21,4 +21,5 @@ mainAccount.addTransaction(buyMilk);
 mainAccount.addTransaction(buyBread);
 // console.log(mainAccount.transactions[0].gbpAmount());
 // console.log(mainAccount.transactionsByTag(groceries));
-console.log(mainAccount.transactionsByValueRange(2, 10));
+// console.log(mainAccount.transactionsByValueRange(2, 10));
+console.log(mainAccount.transactionsThisMonth());

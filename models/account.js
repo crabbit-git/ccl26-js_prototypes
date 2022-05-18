@@ -5,7 +5,7 @@ Account.prototype.addTransaction = function(transaction) {
     this.transactions.push(transaction);
 };
 Account.prototype.transactionsByMerchant = function(merchant) {
-    transactionsWithMerchant = [];
+    let transactionsWithMerchant = [];
     for (var transaction of this.transactions) {
         if (transaction.merchant === merchant) {
             transactionsWithMerchant.push(transaction)
@@ -14,7 +14,7 @@ Account.prototype.transactionsByMerchant = function(merchant) {
     return transactionsWithMerchant;
 };
 Account.prototype.transactionsByTag = function(tag) {
-    transactionsWithTag = [];
+    let transactionsWithTag = [];
     for (var transaction of this.transactions) {
         if (transaction.merchant.tag === tag) {
             transactionsWithTag.push(transaction)
@@ -23,7 +23,7 @@ Account.prototype.transactionsByTag = function(tag) {
     return transactionsWithTag;
 };
 Account.prototype.transactionsByValueRange = function(min, max) {
-    transactionsInRange = [];
+    let transactionsInRange = [];
     for (var transaction of this.transactions) {
         if (transaction.amount >= min && transaction.amount <= max) {
             transactionsInRange.push(transaction);
@@ -31,4 +31,13 @@ Account.prototype.transactionsByValueRange = function(min, max) {
     };
     return transactionsInRange;
 };
+Account.prototype.transactionsThisMonth = function() {
+    let transactionsThisMonth = [];
+    for (var transaction of this.transactions) {
+        if (transaction.timestamp.getMonth() === new Date().getMonth()) {
+            transactionsThisMonth.push(transaction);
+        };
+    };
+    return transactionsThisMonth;
+}
 module.exports = Account;
