@@ -22,4 +22,13 @@ Account.prototype.transactionsByTag = function(tag) {
     };
     return transactionsWithTag;
 };
+Account.prototype.transactionsByValueRange = function(min, max) {
+    transactionsInRange = [];
+    for (var transaction of this.transactions) {
+        if (transaction.amount >= min && transaction.amount <= max) {
+            transactionsInRange.push(transaction);
+        };
+    };
+    return transactionsInRange;
+};
 module.exports = Account;
